@@ -86,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Pertemuan 4
+        Button btnPertemuan = (Button)findViewById(R.id.buttonPertemuan);
+        btnPertemuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,DebuggingActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 

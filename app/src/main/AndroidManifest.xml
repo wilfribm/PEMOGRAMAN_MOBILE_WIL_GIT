@@ -14,6 +14,7 @@
         <activity android:name=".ListActivity" />
         <activity android:name=".TrackerActivity" />
         <activity android:name=".HelpActivity" />
+        <activity android:name=".DebuggingActivity" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
