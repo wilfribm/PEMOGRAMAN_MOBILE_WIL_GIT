@@ -39,7 +39,7 @@ public class MahasiswaCRUDRecyclerAdapter extends RecyclerView.Adapter<Mahasiswa
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_recycler,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_cardview,parent,false);
         return new ViewHolder(v);
     }
 
@@ -50,6 +50,11 @@ public class MahasiswaCRUDRecyclerAdapter extends RecyclerView.Adapter<Mahasiswa
 
         viewHolder.tvNama.setText(m.getNama());
         viewHolder.tvNim.setText(m.getNim());
+
+        viewHolder.tvAlamat.setText(m.getAlamat());
+        viewHolder.tvEmail.setText(m.getEmail());
+
+
 //        viewHolder.tvNoTelp.setText(m.getNotelp());
 
 
@@ -63,12 +68,14 @@ public class MahasiswaCRUDRecyclerAdapter extends RecyclerView.Adapter<Mahasiswa
 
     public  class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvNama,tvNim,tvNoTelp;
+        private TextView tvNama,tvNim,tvAlamat,tvEmail,tvNoTelp;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNama = itemView.findViewById(R.id.tvNama);
             tvNim = itemView.findViewById(R.id.tvNim);
+            tvAlamat = itemView.findViewById(R.id.tvAlamat);
+            tvEmail = itemView.findViewById(R.id.tvEmail);
 //            tvNoTelp  = itemView.findViewById(R.id.tvNoTelp);
 
         }

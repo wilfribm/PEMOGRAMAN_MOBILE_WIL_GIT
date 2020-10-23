@@ -22,11 +22,11 @@ public class MahasiswaUpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mahasiswa_update);
 
-        EditText editTextNimCari = (EditText)findViewById(R.id.editTextNimCari);
-        EditText EditTextNama2 = (EditText)findViewById(R.id.EditTextNama2);
-        EditText EditTextNim2 = (EditText)findViewById(R.id.EditTextNim2);
-        EditText EditTextAlamat2 = (EditText)findViewById(R.id.EditTextAlamat2);
-        EditText EditTextEmail2 = (EditText)findViewById(R.id.EditTextEmail2);
+        final EditText editTextNimCari = (EditText)findViewById(R.id.editTextNimCari);
+        final EditText EditTextNama2 = (EditText)findViewById(R.id.EditTextNama2);
+        final EditText EditTextNim2 = (EditText)findViewById(R.id.EditTextNim2);
+        final EditText EditTextAlamat2 = (EditText)findViewById(R.id.EditTextAlamat2);
+        final EditText EditTextEmail2 = (EditText)findViewById(R.id.EditTextEmail2);
         Button buttonUbah = (Button) findViewById(R.id.buttonUbah);
 
 
@@ -40,18 +40,14 @@ public class MahasiswaUpdateActivity extends AppCompatActivity {
                 pd.show();
 
                 GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
-                Call<DefaultResult> call = service.update_mhs(
-                        editTextNimCari.getText().toString(),
-                        EditTextNama2.getText().toString(),
-                        EditTextNim2.getText().toString(),
-                        EditTextAlamat2.getText().toString(),
-                        EditTextEmail2.getText().toString()
+                Call<DefaultResult> delcall = service.delete_mhs(
+                        editTextNimCari.getText().toString()
                         , "72180230"
 
 
                 );
 
-                call.enqueue(new Callback<DefaultResult>() {
+                delcall.enqueue(new Callback<DefaultResult>() {
                     @Override
                     public void onResponse(Call<DefaultResult> call, Response<DefaultResult> response) {
                         pd.dismiss();
@@ -62,6 +58,29 @@ public class MahasiswaUpdateActivity extends AppCompatActivity {
                     public void onFailure(Call<DefaultResult> call, Throwable t) {
                         pd.dismiss();
                         Toast.makeText(MahasiswaUpdateActivity.this, "Gagal", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                Call<DefaultResult> addcall= service.add_mhs(
+                        EditTextNama2.getText().toString(),
+                        EditTextNim2.getText().toString(),
+                        EditTextAlamat2.getText().toString(),
+                        EditTextEmail2.getText().toString(),
+                        "kosongkan saja",
+                        "72180230"
+                );
+                addcall.enqueue(new Callback<DefaultResult>() {
+                    @Override
+                    public void onResponse(Call<DefaultResult> call, Response<DefaultResult> response) {
+                        pd.dismiss();
+                        Toast.makeText(MahasiswaUpdateActivity.this,"Berhasil disimpan",Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<DefaultResult> call, Throwable t) {
+                        pd.dismiss();
+                        Toast.makeText(MahasiswaUpdateActivity.this,"Error",Toast.LENGTH_LONG).show();
                     }
                 });
 

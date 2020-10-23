@@ -46,7 +46,7 @@ public class MahasiswaRecyclerAdapterDebug extends RecyclerView.Adapter<Mahasisw
 
         viewHolder.tvNama.setText(m.getNama());
         viewHolder.tvNim.setText(m.getNim());
-        viewHolder.tvNoTelp.setText(m.getNotelp());
+//        viewHolder.tvNoTelp.setText(m.getNotelp());
 
 
     }
@@ -65,7 +65,7 @@ public class MahasiswaRecyclerAdapterDebug extends RecyclerView.Adapter<Mahasisw
             super(itemView);
             tvNama = itemView.findViewById(R.id.tvNama);
             tvNim = itemView.findViewById(R.id.tvNim);
-            tvNoTelp  = itemView.findViewById(R.id.tvNoTelp);
+//            tvNoTelp  = itemView.findViewById(R.id.tvNoTelp);
 
         }
     }

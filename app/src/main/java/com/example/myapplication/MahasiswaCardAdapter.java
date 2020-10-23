@@ -49,7 +49,13 @@ public class MahasiswaCardAdapter extends RecyclerView.Adapter<MahasiswaCardAdap
 
         viewHolder.tvNama.setText(m.getNama());
         viewHolder.tvNim.setText(m.getNim());
-        viewHolder.tvNoTelp.setText(m.getNotelp());
+
+        viewHolder.tvAlamat.setText(m.getAlamat());
+        viewHolder.tvEmail.setText(m.getEmail());
+//        viewHolder.tvNoTelp.setText(m.getNotelp());
+
+
+
 
 
     }
@@ -62,13 +68,17 @@ public class MahasiswaCardAdapter extends RecyclerView.Adapter<MahasiswaCardAdap
 
     public  class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvNama,tvNim,tvNoTelp;
+        private TextView tvNama,tvNim,tvNoTelp,tvAlamat,tvEmail;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNama = itemView.findViewById(R.id.tvNama);
             tvNim = itemView.findViewById(R.id.tvNim);
             tvNoTelp  = itemView.findViewById(R.id.tvNoTelp);
+            tvAlamat  = itemView.findViewById(R.id.tvAlamat);
+            tvEmail  = itemView.findViewById(R.id.tvEmail);
+
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
