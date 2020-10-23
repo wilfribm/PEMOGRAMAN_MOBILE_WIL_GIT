@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class CardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card);
 
-        CardView cv = (CardView)findViewById(R.id.cvMahasiswa);
+        RecyclerView cv = (RecyclerView) findViewById(R.id.cvLatihan);
 
         MahasiswaCardAdapter mahasiswaCardAdapter;
 
@@ -37,6 +38,9 @@ public class CardActivity extends AppCompatActivity {
 
         mahasiswaCardAdapter = new MahasiswaCardAdapter(CardActivity.this);
         mahasiswaCardAdapter.setMahasiswaCard(mahasiswaCard);
+
+        cv.setLayoutManager(new LinearLayoutManager(CardActivity.this));
+        cv.setAdapter(mahasiswaCardAdapter);
 
 
 
