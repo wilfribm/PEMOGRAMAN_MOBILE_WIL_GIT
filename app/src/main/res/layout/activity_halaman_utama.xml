@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BFB7CA"
+    tools:context=".HalamanUtamaActivity">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Aplikasi Pengelola Data Akademik"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonKelolaMahasiswa"
+        android:layout_width="229dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/buttonmhs"
+        android:text="Kelola Data Mahasiswa"
+        android:textColor="#FF5722"
+        android:textColorHighlight="#2196F3"
+        android:textColorHint="#E91E63"
+        android:textCursorDrawable="@android:drawable/btn_star"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/buttonKelolaDosen"
+        android:layout_width="185dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/buttondosen"
+        android:text="Kelola Data Dosen"
+        android:textColor="#4400BC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonKelolaMahasiswa" />
+
+    <Button
+        android:id="@+id/buttonKelolaMatakuliah"
+        android:layout_width="278dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/buttonmatkul"
+        android:text="Kelola Matkuliah"
+        android:textColor="#FFC107"
+        android:textColorHighlight="#E60D0D"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonKelolaDosen" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="317dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/btlog"
+        android:text="Logout"
+        android:textColor="#FF5722"
+        android:textColorHighlight="#DA0909"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonKelolaMatakuliah" />
+</android.support.constraint.ConstraintLayout>
